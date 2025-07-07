@@ -59,8 +59,13 @@ pnpm run dev
 
 Make sure MongoDB is running locally at mongodb://localhost:27017/mern-blog
 
-## 📸 Screenshots
+---
 
+## 📸 Screenshot
+
+![mern-blog](https://github.com/user-attachments/assets/ed6635bb-3697-4a08-89ba-2b24a656ca6e)
+
+---
 
 ## 🧪 API Endpoints
 
@@ -87,6 +92,7 @@ GET /api/comments/post/:postId
 
 POST /api/comments
 
+---
 
 ## ✅ Author
 
