@@ -1,4 +1,4 @@
-// server.js - Main server file for the MERN blog application
+/// server.js - Main server file for the MERN blog application
 
 // Import required modules
 const express = require('express');
@@ -10,7 +10,11 @@ const path = require('path');
 // Import routes
 const postRoutes = require('./routes/posts');
 const categoryRoutes = require('./routes/categories');
-const authRoutes = require('./routes/auth');
+// const commentRoutes = require('./routes/comments'); // ✅ New: Comments route
+
+// Import models
+require('./models/User');
+require('./models/Comment'); // ✅ New: Comment model
 
 // Load environment variables
 dotenv.config();
@@ -38,11 +42,11 @@ if (process.env.NODE_ENV === 'development') {
 // API routes
 app.use('/api/posts', postRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use('/api/auth', authRoutes);
+// app.use('/api/comments', commentRoutes); // ✅ New: mount comments route
 
 // Root route
 app.get('/', (req, res) => {
-  res.send('MERN Blog API is running');
+  res.send('Hi there!');
 });
 
 // Error handling middleware
@@ -75,4 +79,4 @@ process.on('unhandledRejection', (err) => {
   process.exit(1);
 });
 
-module.exports = app; 
+module.exports = app;
